@@ -10,7 +10,10 @@
   </taskdef>
 
   <target name="run">
-    <unsprung>
+    <unsprung destination="GeneratedSpringContext.java">
+      <fileset dir=".">
+        <filename name="appContext.xml"/>
+      </fileset>
     </unsprung>
   </target>
 
