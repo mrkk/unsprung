@@ -11,7 +11,7 @@ public class UnSprungAntTask extends Task {
 	
 	private org.apache.tools.ant.types.FileSet src = null;
 	private File dest = new File("GeneratedSpringContext.java");
-	private File props = null;
+	private File prop = null;
 	
 	public void addFileset( org.apache.tools.ant.types.FileSet src ) {
 		this.src = src;
@@ -28,24 +28,25 @@ public class UnSprungAntTask extends Task {
 	}
 
 	public void setProperties(File prop) {
-		this.props = props;
+		this.prop = prop;
 	}
 
 	@Override
 	public void execute() throws BuildException {
 
 		UnSprung unSprung = new UnSprung();
-		if( props!=null )
+		if( prop!=null )
 			try {
-				unSprung.addProperties(props);
+				unSprung.addProperties(prop);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 		DirectoryScanner ds = src.getDirectoryScanner(getProject());
+		
 		for(String fn : ds.getIncludedFiles()) {
-			File file = new File(fn);
+			File file = new File(ds.getBasedir() + System.getProperty("file.separator") + fn);
 			try {
 				unSprung.addContextFile(file);
 			} catch (IOException e) {

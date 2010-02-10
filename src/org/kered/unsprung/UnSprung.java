@@ -33,6 +33,7 @@ public class UnSprung {
 	public UnSprung() {}
 	
 	public void addProperties(File propFile) throws IOException {
+		System.out.println("loading properties: "+ propFile.getAbsolutePath());
 		props.load(new FileInputStream(propFile));
 	}
 	
