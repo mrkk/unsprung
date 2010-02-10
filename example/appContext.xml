@@ -10,8 +10,7 @@
        http://jax-ws.dev.java.net/spring/core http://jax-ws.dev.java.net/spring/core.xsd
        http://jax-ws.dev.java.net/spring/servlet http://jax-ws.dev.java.net/spring/servlet.xsd">
 
-    <bean id="bean1" class="java.util.ArrayList">
-    </bean>
+    <bean id="bean1" class="java.util.ArrayList"></bean>
     <bean id="bean2" class="java.util.ArrayList">
         <constructor-arg index="0" ref="bean1" />
     </bean>
