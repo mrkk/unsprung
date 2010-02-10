@@ -1,0 +1,17 @@
+<project name="UnSprungExample" default="run" basedir=".">
+    <description>
+        Example use of UnSprung
+    </description>
+
+	<taskdef name="unsprung" classname="org.kered.unsprung.UnSprungAntTask">
+	  <classpath>
+	    <pathelement location="../dist/lib/unsprung.jar"/>
+	  </classpath>
+  </taskdef>
+
+  <target name="run">
+    <unsprung>
+    </unsprung>
+  </target>
+
+</project>

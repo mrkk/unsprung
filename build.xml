@@ -1,4 +1,4 @@
-<project name="Unsprung" default="dist" basedir=".">
+<project name="UnSprung" default="dist" basedir=".">
     <description>
         Converts Spring's context XML back to Java code
     </description>
