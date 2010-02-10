@@ -18,6 +18,12 @@ public class UnSprungAntTask extends Task {
 	}
 	
 	public void setDestination(File dest) {
+		if( dest.isDirectory() ) {
+			dest = new File( dest.getAbsolutePath()+System.getProperty("file.separator")+"GeneratedSpringContext.java" );
+		}
+		if( !dest.getAbsoluteFile().toString().toLowerCase().endsWith(".java") ) {
+			throw new RuntimeException("destination must be a java file (ends with '.java')");
+		}
 		this.dest = dest;
 	}
 
